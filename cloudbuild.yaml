@@ -1,0 +1,4 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/nodejs-cloudbuild-kubernetes/nodejs-cloudbuild-kubernetes:$COMMIT_SHA', '.']
+images: ['gcr.io/nodejs-cloudbuild-kubernetes/nodejs-cloudbuild-kubernetes:$COMMIT_SHA']
