@@ -2,7 +2,7 @@ import express from "express";
 const app = express();
 
 app.get("/", (req, res) => {
-  res.send("Hello Kubernetes");
+  res.send("Hello Kubernetes with HTTPS");
 });
 
 const PORT = process.env.PORT || 9000;
