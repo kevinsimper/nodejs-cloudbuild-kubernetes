@@ -2,18 +2,20 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   labels:
-    run: nodejs-cloudbuild-kubernetes
+    app: nodejs-cloudbuild-kubernetes
   name: nodejs-cloudbuild-kubernetes
   namespace: default
 spec:
   selector:
     matchLabels:
-      run: nodejs-cloudbuild-kubernetes
+      app: nodejs-cloudbuild-kubernetes
   template:
     metadata:
       labels:
-        run: nodejs-cloudbuild-kubernetes
+        app: nodejs-cloudbuild-kubernetes
     spec:
       containers:
         - image: gcr.io/nodejs-cloudbuild-kubernetes/github.com/kevinsimper/nodejs-cloudbuild-kubernetes:{{ .sha }}
           name: nodejs-cloudbuild-kubernetes
+          ports:
+            - containerPort: 9000
