@@ -15,8 +15,7 @@ spec:
         app: nodejs-cloudbuild-kubernetes
     spec:
       containers:
-        # - image: gcr.io/nodejs-cloudbuild-kubernetes/nodejs-cloudbuild-kubernetes:{{ .sha }}
-        - image: gcr.io/nodejs-cloudbuild-kubernetes/nodejs-cloudbuild-kubernetes:6181c37a64d357125bc0ba09babab8eaef22fe76
+        - image: gcr.io/nodejs-cloudbuild-kubernetes/nodejs-cloudbuild-kubernetes:{{ .sha }}
           name: nodejs-cloudbuild-kubernetes
           ports:
             - containerPort: 9000
