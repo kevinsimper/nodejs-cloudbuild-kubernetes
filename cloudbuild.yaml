@@ -8,10 +8,9 @@ steps:
   args:
   - '-c'
   - |
-      /render -f /workspace/kubernetes/deployment.yml -var sha=$COMMIT_SHA -o /workspace/output.yml
-      ls /workspace
+      /render -f /workspace/kubernetes/deployment.yml -var sha=$COMMIT_SHA -o /workspace
 - name: 'gcr.io/cloud-builders/kubectl'
-  args: ['get', 'pods']
+  args: ['apply', '-f', '/workspace/workspace/kubernetes/deployment.yml']
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=europe-west4-a'
   - 'CLOUDSDK_CONTAINER_CLUSTER=staging'
